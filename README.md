@@ -1,4 +1,4 @@
-<h1 align="center">A3Mall商城系统</h1> 
+<h1 align="center">PHP Wechat Development Framework</h1> 
 <p align="center">
     <a href="http://www.a3-mall.com">
         <img src="https://img.shields.io/badge/Website-A3Mall-important.svg" />
