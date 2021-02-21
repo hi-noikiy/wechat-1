@@ -18,7 +18,6 @@ class Config {
      * @var array $config
      */
     private static $config = [
-        "debug"=>true,
         'http' => [
             'base_uri' => 'https://api.weixin.qq.com/',
             'timeout' => 30.0

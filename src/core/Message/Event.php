@@ -7,17 +7,9 @@
 // | Author: xzncit <158373108@qq.com>
 // +----------------------------------------------------------------------
 
-namespace xzncit\wechat\Message;
+namespace xzncit\core\Message;
 
-use Pimple\Container;
-use Pimple\ServiceProviderInterface;
 
-class ProviderService implements ServiceProviderInterface{
-
-    public function register(Container $app){
-        !isset($app['message']) && $app['message'] = function ($app) {
-            return new Message($app);
-        };
-    }
+class Event {
 
 }

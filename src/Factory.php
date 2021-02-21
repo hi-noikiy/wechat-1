@@ -10,11 +10,17 @@ use xzncit\core\exception\ConfigNotFoundException;
 /**
  * Class Factory
  * @package xzncit
- * @method static Wechat Wechat(array $config)
- * @method static MiniProgram MiniProgram(array $config)
- * @method static Payment Payment(array $config)
+ * @method static \xzncit\wechat\Wechat Wechat(array $config)
+ * @method static \xzncit\mini\MiniProgram MiniProgram(array $config)
+ * @method static \xzncit\payment\Payment Payment(array $config)
  */
 class Factory {
+
+    /**
+     * Current version of program
+     * @var string
+     */
+    public static $version = "0.3";
 
     /**
      * @param $name
