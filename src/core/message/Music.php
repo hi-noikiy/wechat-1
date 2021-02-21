@@ -7,36 +7,33 @@
 // | Author: xzncit <158373108@qq.com>
 // +----------------------------------------------------------------------
 
-namespace xzncit\core\Message;
+namespace xzncit\core\message;
 
 
-class News extends Message {
+class Music extends Message {
 
     protected $attribute = [
-        "CreateTime"   => "",
-        "MsgType"      => 'news',
-        "Articles"     => [],
-        "ToUserName"   => "",
-        "FromUserName" => "",
-        "ArticleCount" => "",
+        'CreateTime'   => "",
+        'MsgType'      => "music",
+        'Music'     => [],
+        'ToUserName'   => "",
+        'FromUserName' => ""
     ];
 
     /**
-     * News constructor.
+     * Music constructor.
      * @param array $data [
-     *      "item"=>[
-     *          "Title"=>"",
-     *          "Description"=>"",
-     *          "PicUrl"=>"",
-     *          "Url"=>""
-     *      ]
+     *      "Title"=>"",
+     *      "Description"=>"",
+     *      "MusicUrl"=>"",
+     *      "HQMusicUrl"=>"",
+     *      "ThumbMediaId"=>""
      * ]
      */
     public function __construct(array $data=[]){
         $this->setAttribute([
             "CreateTime"    =>  time(),
-            "Articles"      =>  $data,
-            "ArticleCount"  =>  count($data)
+            "Music"         =>  $data
         ]);
     }
 

@@ -14,7 +14,7 @@ use xzncit\core\base\Prpcrypt;
 use xzncit\core\exception\ConfigNotFoundException;
 use xzncit\core\http\Request;
 use xzncit\core\http\Response;
-use xzncit\core\Message\Raw;
+use xzncit\core\message\Raw;
 use xzncit\core\Service;
 
 class Server extends BaseWeChat {

@@ -7,27 +7,27 @@
 // | Author: xzncit <158373108@qq.com>
 // +----------------------------------------------------------------------
 
-namespace xzncit\core\Message;
+namespace xzncit\core\message;
 
 
-class Text extends Message {
+class Image extends Message {
 
     protected $attribute = [
-        "MsgType"      => "text",
+        "MsgType"      => "image",
         "CreateTime"   => "",
-        "Content"      => "",
         "ToUserName"   => "",
         "FromUserName" => "",
+        "Image"        => [],
     ];
 
     /**
-     * Text constructor.
-     * @param string $content
+     * Image constructor.
+     * @param string $mediaId
      */
-    public function __construct(string $content=""){
+    public function __construct(string $mediaId=""){
         $this->setAttribute([
-            "CreateTime"=>time(),
-            "Content"=>$content
+            "CreateTime"    =>  time(),
+            "Image"         =>  ['MediaId' => $mediaId]
         ]);
     }
 

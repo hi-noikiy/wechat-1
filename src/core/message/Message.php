@@ -7,7 +7,7 @@
 // | Author: xzncit <158373108@qq.com>
 // +----------------------------------------------------------------------
 
-namespace xzncit\core\Message;
+namespace xzncit\core\message;
 
 
 use xzncit\core\base\Prpcrypt;
@@ -26,6 +26,9 @@ class Message {
      */
     protected $message = "";
 
+    /**
+     * @var bool
+     */
     protected $encryptAES = false;
 
     /**
@@ -66,15 +69,6 @@ class Message {
     }
 
     /**
-     * @param string $message
-     * @return $this
-     */
-    public function setMessage($message){
-        $this->message = $message;
-        return $this;
-    }
-
-    /**
      * @param false $encryptAES
      */
     public function setEncryptMode($encryptAES = false){
@@ -87,7 +81,7 @@ class Message {
      * @throws \Exception
      */
     public function send(){
-        $result = Response::arr2xml($this->message);
+        $result = Response::arr2xml($this->attribute);
 
         if($this->encryptAES){
             $config = Config::get("wechat");

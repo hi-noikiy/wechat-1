@@ -7,27 +7,36 @@
 // | Author: xzncit <158373108@qq.com>
 // +----------------------------------------------------------------------
 
-namespace xzncit\core\Message;
+namespace xzncit\core\message;
 
 
-class Image extends Message {
+class News extends Message {
 
     protected $attribute = [
-        "MsgType"      => "image",
         "CreateTime"   => "",
+        "MsgType"      => 'news',
+        "Articles"     => [],
         "ToUserName"   => "",
         "FromUserName" => "",
-        "Image"        => [],
+        "ArticleCount" => "",
     ];
 
     /**
-     * Image constructor.
-     * @param string $mediaId
+     * News constructor.
+     * @param array $data [
+     *      "item"=>[
+     *          "Title"=>"",
+     *          "Description"=>"",
+     *          "PicUrl"=>"",
+     *          "Url"=>""
+     *      ]
+     * ]
      */
-    public function __construct(string $mediaId=""){
+    public function __construct(array $data=[]){
         $this->setAttribute([
             "CreateTime"    =>  time(),
-            "Image"         =>  ['MediaId' => $mediaId]
+            "Articles"      =>  $data,
+            "ArticleCount"  =>  count($data)
         ]);
     }
 

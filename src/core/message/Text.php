@@ -7,17 +7,28 @@
 // | Author: xzncit <158373108@qq.com>
 // +----------------------------------------------------------------------
 
-namespace xzncit\core\Message;
+namespace xzncit\core\message;
 
 
-class Raw extends Message {
+class Text extends Message {
 
+    protected $attribute = [
+        "MsgType"      => "text",
+        "CreateTime"   => "",
+        "Content"      => "",
+        "ToUserName"   => "",
+        "FromUserName" => "",
+    ];
+
+    /**
+     * Text constructor.
+     * @param string $content
+     */
     public function __construct(string $content=""){
-        $this->message = $content;
-    }
-
-    public function send(){
-        return $this->message;
+        $this->setAttribute([
+            "CreateTime"=>time(),
+            "Content"=>$content
+        ]);
     }
 
 }

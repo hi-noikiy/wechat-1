@@ -7,9 +7,17 @@
 // | Author: xzncit <158373108@qq.com>
 // +----------------------------------------------------------------------
 
-namespace xzncit\core\Message;
+namespace xzncit\core\message;
 
 
-class Event {
+class Raw extends Message {
+
+    public function __construct(string $content=""){
+        $this->message = $content;
+    }
+
+    public function send(){
+        return $this->message;
+    }
 
 }

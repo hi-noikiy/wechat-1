@@ -7,27 +7,31 @@
 // | Author: xzncit <158373108@qq.com>
 // +----------------------------------------------------------------------
 
-namespace xzncit\core\Message;
+namespace xzncit\core\message;
 
 
-class Voice extends Message {
+class Video extends Message {
 
     protected $attribute = [
-        "MsgType"      => "image",
         "CreateTime"   => "",
+        "MsgType"      => "video",
+        "Video"        => [],
         "ToUserName"   => "",
-        "FromUserName" => "",
-        "Voice"        => [],
+        "FromUserName" => ""
     ];
 
     /**
-     * Voice constructor.
-     * @param string $mediaId
+     * Video constructor.
+     * @param array $data [
+     *      "MediaId"=>media_id
+     *      "Title"=>"",
+     *      "Description"=>""
+     * ]
      */
-    public function __construct(string $mediaId=""){
+    public function __construct(array $data=[]){
         $this->setAttribute([
             "CreateTime"    =>  time(),
-            "Voice"         =>  ['MediaId' => $mediaId]
+            "Video"         =>  $data
         ]);
     }
 
