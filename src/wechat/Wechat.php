@@ -18,6 +18,7 @@ use xzncit\core\exception\ConfigNotFoundException;
  *
  * @property \xzncit\wechat\OAuth\OAuth                                         $oauth
  * @property \xzncit\wechat\Script\Script                                       $script
+ * @property \xzncit\wechat\Message\Message                                     $message
  * @property \xzncit\wechat\Base\Base                                           $base
  * @property \xzncit\wechat\Menus\Menu                                          $menu
  * @property \xzncit\wechat\Subscription\Subscription                           $subscription
@@ -47,6 +48,7 @@ class Wechat extends Service {
     protected $providers = [
         "oauth"                  =>      OAuth\ProviderService::class,
         "script"                 =>      Script\ProviderService::class,
+        "message"                =>      Message\ProviderService::class,
         "base"                   =>      Base\ProviderService::class,
         "menu"                   =>      Menus\ProviderService::class,
         "subscription"           =>      Subscription\ProviderService::class,
