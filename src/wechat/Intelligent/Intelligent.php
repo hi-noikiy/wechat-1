@@ -180,6 +180,7 @@ class Intelligent extends BaseWeChat {
     /**
      * @param string|resource $file         文件的绝对路径或者使用 fopen 返回的资源
      * @param string $uri
+     * @param string $ratios                ratios参数为可选，如果为空，则算法自动裁剪最佳宽高比
      * @return array
      * @throws \Exception
      */

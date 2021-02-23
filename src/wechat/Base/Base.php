@@ -32,9 +32,7 @@ class Base extends BaseWeChat {
      * @return array
      */
     public function getCallbackIp(){
-        return HttpClient::create()->get("cgi-bin/getcallbackip",[
-            "access_token"=>"ACCESS_TOKEN"
-        ])->toArray();
+        return HttpClient::create()->get("cgi-bin/getcallbackip?access_token=ACCESS_TOKEN")->toArray();
     }
 
     /**
@@ -45,6 +43,17 @@ class Base extends BaseWeChat {
         return HttpClient::create()->postJson("cgi-bin/callback/check?access_token=ACCESS_TOKEN",[
             "action"=>"all",
             "check_operator"=>"DEFAULT"
+        ])->toArray();
+    }
+
+    /**
+     * 公众号调用或第三方平台帮公众号调用对公众号的所有api调用（包括第三方帮其调用）次数进行清零
+     * @return array
+     * @throws \Exception
+     */
+    public function clearQuota(){
+        return HttpClient::create()->postJson("cgi-bin/clear_quota?access_token=ACCESS_TOKEN",[
+            "appid"=>$this->app->config["appid"]
         ])->toArray();
     }
 

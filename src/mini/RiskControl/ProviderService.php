@@ -7,7 +7,7 @@
 // | Author: xzncit <158373108@qq.com>
 // +----------------------------------------------------------------------
 
-namespace xzncit\wechat\OAuth;
+namespace xzncit\mini\RiskControl;
 
 use Pimple\Container;
 use Pimple\ServiceProviderInterface;
@@ -15,8 +15,8 @@ use Pimple\ServiceProviderInterface;
 class ProviderService implements ServiceProviderInterface{
 
     public function register(Container $app){
-        !isset($app['oauth']) && $app['oauth'] = function ($app) {
-            return new OAuth($app);
+        !isset($app['risk_control']) && $app['risk_control'] = function ($app) {
+            return new RiskControl($app);
         };
     }
 

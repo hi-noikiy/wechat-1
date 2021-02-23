@@ -90,6 +90,7 @@ class Wechat extends Service {
         }
 
         parent::__construct($config);
+        Config::set("app_type","wechat");
         Config::set("wechat",array_merge(Config::get("wechat"),$config));
     }
 

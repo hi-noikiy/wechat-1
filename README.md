@@ -7,15 +7,47 @@
         <img src="https://img.shields.io/badge/Licence-GPL3.0-green.svg" />
     </a>
     <a href="http://www.a3-mall.com">
-        <img src="https://img.shields.io/badge/Edition-v0.9-blue.svg" />
+        <img src="https://img.shields.io/badge/Edition-v0.3.2-blue.svg" />
     </a>
 </p>
 <p align="center">    
     <b>如果本PHP WeChat 开发包对您有所帮助，您可以点右上角 "Star" 支持一下 谢谢！</b>
 </p>
 
+#### 环境要求
+PHP >= 7.2.5
+Composer
+Openssl PHP Extension
+MBstring PHP Extension
+fileinfo PHP Extension
 
-正在整理中...
+#### 安装
+composer require "xzncit/wechat:^0.3"
+
+#### 基本使用
+```php
+include "vendor/autoload.php";
+
+use xzncit\Factory;
+
+try {
+    $app = Factory::Wechat([
+        "token"=>"omJNpZEhZ5VFbk1HeHj1ZxFECKkP48BP",
+        "appid"=>"wxa02e77d8a507d608",
+        "appsecret"=>"3396f50c1f55c2089f4316b6f7c9f71b"
+    ]);
+    
+    // 创建自定义菜单
+    $response = $app->menu->create();
+    // 返回信息
+    var_dump($response);
+}catch (\Exception $ex){
+    echo("error: ".$ex->getMessage());
+}
+```
+
+#### 文档
+文档整理中...
 
  **bug反馈**
 

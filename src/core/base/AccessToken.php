@@ -19,7 +19,7 @@ class AccessToken {
 
     public static function get(){
         $cache = Cache::create();
-        $cacheName = self::$cacheName . "_" . Config::get("wechat.appid");
+        $cacheName = self::getCacheName();
         if($cache->has($cacheName)){
             return $cache->get($cacheName);
         }
@@ -39,7 +39,12 @@ class AccessToken {
     }
 
     public static function delete(){
-        Cache::create()->delete(self::$cacheName . "_" . Config::get("wechat.appid"));
+        Cache::create()->delete(self::getCacheName());
+    }
+
+    private static function getCacheName(){
+        $appType = Config::get("app_type");
+        return self::$cacheName . "_" . Config::get($appType . ".appid");
     }
 
 }

@@ -163,7 +163,8 @@ class HttpClient {
      * @return array
      * @throws \Exception
      */
-    private function parseUrl($uri=""){
+    private function parseUrl($url=""){
+        $uri = trim($url);
         if(empty($uri)){
             throw new \Exception("error uri not empty",0);
         }

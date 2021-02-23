@@ -9,7 +9,6 @@
 
 namespace xzncit\wechat\Materials;
 
-
 use xzncit\core\base\BaseWeChat;
 use xzncit\core\http\HttpClient;
 
@@ -20,10 +19,11 @@ class Materials extends BaseWeChat {
      * @param string|resource      $file          文件的绝对路径或者使用 fopen 返回的资源
      * @param string               $type          媒体文件类型，分别有图片（image）、语音（voice）、视频（video）和缩略图（thumb）
      * @param bool                 $permanently   上传永久性素材
+     * @param array                $args          上传需要填写此参数
      * @return array
      * @throws \Exception
      */
-    public function add($file,$type="image",$permanently=false){
+    public function add($file,$type="image",$permanently=false,$args=[]){
         if(!in_array($type,["image","voice","video","thumb"])){
             throw new \Exception("Illegal media file type",0);
         }
@@ -36,12 +36,24 @@ class Materials extends BaseWeChat {
             $file = fopen($file,"r+");
         }
 
+        $data = [[
+            'name' => 'media',
+            'contents' => $file
+        ]];
+
+        if($permanently && $type == "video"){
+            $data[] = [
+                'name' => 'description',
+                'contents' => json_encode([
+                    "title"=>isset($args["title"]) ? $args["title"] : "video",
+                    "introduction"=>isset($args["intro"]) ? $args["intro"] : "video"
+                ],JSON_UNESCAPED_UNICODE)
+            ];
+        }
+
         return HttpClient::create()->upload(
             $permanently ? "cgi-bin/material/add_material?access_token=ACCESS_TOKEN&type={$type}" : "cgi-bin/media/upload?access_token=ACCESS_TOKEN&type={$type}",
-            [[
-                'name' => 'media',
-                'contents' => $file
-            ]]
+            $data
         )->toArray();
     }
 

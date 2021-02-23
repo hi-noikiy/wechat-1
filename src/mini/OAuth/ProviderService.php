@@ -7,7 +7,7 @@
 // | Author: xzncit <158373108@qq.com>
 // +----------------------------------------------------------------------
 
-namespace xzncit\wechat\OAuth;
+namespace xzncit\mini\OAuth;
 
 use Pimple\Container;
 use Pimple\ServiceProviderInterface;

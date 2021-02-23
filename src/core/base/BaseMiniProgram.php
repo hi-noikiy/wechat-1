@@ -7,17 +7,16 @@
 // | Author: xzncit <158373108@qq.com>
 // +----------------------------------------------------------------------
 
-namespace xzncit\wechat\OAuth;
+namespace xzncit\core\base;
 
-use Pimple\Container;
-use Pimple\ServiceProviderInterface;
+use xzncit\core\Service;
 
-class ProviderService implements ServiceProviderInterface{
+class BaseMiniProgram {
 
-    public function register(Container $app){
-        !isset($app['oauth']) && $app['oauth'] = function ($app) {
-            return new OAuth($app);
-        };
+    protected $app;
+
+    public function __construct(Service $app){
+        $this->app = $app;
     }
 
 }

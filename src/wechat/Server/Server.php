@@ -20,7 +20,6 @@ use xzncit\core\Service;
 class Server extends BaseWeChat {
 
     protected $receive;
-    protected $message;
 
     /**
      * Message constructor.
@@ -77,7 +76,7 @@ class Server extends BaseWeChat {
             return $result->setAttribute([
                 "ToUserName"   => $this->getOpenid(),
                 "FromUserName" => $this->getToOpenid()
-            ])->setMessage($this->message)->setEncryptMode($this->isEncryptAES());
+            ])->setEncryptMode($this->isEncryptAES());
         }
     }
 
