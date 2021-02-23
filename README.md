@@ -15,14 +15,16 @@
 </p>
 
 #### 环境要求
-PHP >= 7.2.5
-Composer
-Openssl PHP Extension
-MBstring PHP Extension
-fileinfo PHP Extension
+- PHP >= 7.2.5
+- Composer
+- Openssl PHP Extension
+- MBstring PHP Extension
+- FileInfo PHP Extension
 
 #### 安装
+```
 composer require "xzncit/wechat:^0.3"
+```
 
 #### 基本使用
 ```php
