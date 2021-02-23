@@ -30,7 +30,7 @@ class AccessToken {
     }
 
     public static function set(){
-        $config = Config::get("wechat");
+        $config = Config::get();
         return HttpClient::create()->get("cgi-bin/token",[
             "grant_type"=>"client_credential",
             "appid"=>$config["appid"],
@@ -43,8 +43,7 @@ class AccessToken {
     }
 
     private static function getCacheName(){
-        $appType = Config::get("app_type");
-        return self::$cacheName . "_" . Config::get($appType . ".appid");
+        return self::$cacheName . "_" . Config::get("appid");
     }
 
 }

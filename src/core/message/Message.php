@@ -84,7 +84,7 @@ class Message {
         $result = Response::arr2xml($this->attribute);
 
         if($this->encryptAES){
-            $config = Config::get("wechat");
+            $config = Config::get();
             $prpcrypt = new Prpcrypt($config["enaeskey"]);
             $array = $prpcrypt->encrypt($result, $config["appid"]);
             if ($array[0] > 0) {

@@ -80,8 +80,7 @@ class MiniProgram extends Service{
         }
 
         parent::__construct($config);
-        Config::set("app_type","miniprogram");
-        Config::set("miniprogram",array_merge(Config::get("miniprogram"),$config));
+        Config::set($config);
     }
 
 }

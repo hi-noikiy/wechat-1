@@ -22,26 +22,15 @@ class Config {
             'base_uri' => 'https://api.weixin.qq.com/',
             'timeout' => 30.0
         ],
-        "wechat"=>[
-            "token"=>"",
-            "appid"=>"",
-            "appsecret"=>"",
-            "enaeskey"=>"",
-            // 支付
-            "mch_id"=>"",
-            "mch_key"=>"",
-            "ssl_cer"=>"", // 证书pem
-            "ssl_key"=>"" // 证书密钥
-        ],
-        "miniprogram"=>[
-            "appid"=>"",
-            "appsecret"=>"",
-            // 支付
-            "mch_id"=>"",
-            "mch_key"=>"",
-            "ssl_cer"=>"", // 证书pem
-            "ssl_key"=>"" // 证书密钥
-        ],
+        "token"=>"",
+        "appid"=>"",
+        "appsecret"=>"",
+        "enaeskey"=>"",
+        // 支付
+        "mch_id"=>"",
+        "mch_key"=>"",
+        "ssl_cer"=>"", // 证书pem
+        "ssl_key"=>"", // 证书密钥
         "log"=>[
             "path"=>"",
             "name"=>"My",
@@ -80,13 +69,16 @@ class Config {
     /**
      * @param string|array $name
      * @param null         $value
+     * @return bool
      */
     public static function set($name, $value=null){
         if(is_string($name)){
             self::$config[$name] = $value;
-        }else{
+        }else if(is_array($name)){
             self::$config = self::merge(self::$config,$name);
         }
+
+        return false;
     }
 
     public static function isEmpty($name,$default=""){
