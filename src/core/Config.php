@@ -75,7 +75,7 @@ class Config {
         if(is_string($name)){
             self::$config[$name] = $value;
         }else if(is_array($name)){
-            self::$config = self::merge(self::$config,$name);
+            self::$config = array_merge(self::$config,$name);
         }
 
         return false;
@@ -94,34 +94,6 @@ class Config {
         } else {
             unset(self::$config[$name]);
         }
-    }
-
-    /**
-     * @param mixed ...$args
-     * @return array
-     */
-    public static function merge(...$args){
-        $array = [];
-        while($args){
-            $value = array_shift($args);
-            if(!empty($value)){
-                continue;
-            }
-
-            foreach($value as $key=>$item){
-                if(is_string($key)){
-                    if((is_array($item) && isset($array[$key])) && is_array($array[$key])){
-                        $array[$key] = self::merge(...[$array[$key],$item]);
-                    }else{
-                        $array[$key] = $item;
-                    }
-                }else{
-                    $array[] = $item;
-                }
-            }
-        }
-
-        return $array;
     }
 
     public static function init(){
