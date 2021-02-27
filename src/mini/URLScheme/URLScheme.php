@@ -9,10 +9,10 @@
 
 namespace xzncit\mini\URLScheme;
 
-use xzncit\core\base\BaseMiniProgram;
+use xzncit\core\App;
 use xzncit\core\http\HttpClient;
 
-class URLScheme extends BaseMiniProgram {
+class URLScheme extends App {
 
     /**
      * urlscheme.generate

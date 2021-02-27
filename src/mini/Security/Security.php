@@ -9,11 +9,10 @@
 
 namespace xzncit\mini\Security;
 
-
-use xzncit\core\base\BaseMiniProgram;
+use xzncit\core\App;
 use xzncit\core\http\HttpClient;
 
-class Security extends BaseMiniProgram {
+class Security extends App {
 
     /**
      * security.imgSecCheck

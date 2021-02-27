@@ -9,11 +9,10 @@
 
 namespace xzncit\mini\OCR;
 
-
-use xzncit\core\base\BaseMiniProgram;
+use xzncit\core\App;
 use xzncit\core\http\HttpClient;
 
-class OCR extends BaseMiniProgram {
+class OCR extends App {
 
     /**
      * ocr.bankcard

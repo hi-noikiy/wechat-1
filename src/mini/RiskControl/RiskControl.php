@@ -9,11 +9,10 @@
 
 namespace xzncit\mini\RiskControl;
 
-
-use xzncit\core\base\BaseMiniProgram;
+use xzncit\core\App;
 use xzncit\core\http\HttpClient;
 
-class RiskControl extends BaseMiniProgram {
+class RiskControl extends App {
 
     /**
      * riskControl.getUserRiskRank

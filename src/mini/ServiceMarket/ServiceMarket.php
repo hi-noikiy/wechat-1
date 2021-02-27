@@ -9,11 +9,10 @@
 
 namespace xzncit\mini\ServiceMarket;
 
-
-use xzncit\core\base\BaseMiniProgram;
+use xzncit\core\App;
 use xzncit\core\http\HttpClient;
 
-class ServiceMarket extends BaseMiniProgram {
+class ServiceMarket extends App {
 
     /**
      * serviceMarket.invokeService

@@ -9,11 +9,10 @@
 
 namespace xzncit\mini\Search;
 
-
-use xzncit\core\base\BaseMiniProgram;
+use xzncit\core\App;
 use xzncit\core\http\HttpClient;
 
-class Search extends BaseMiniProgram {
+class Search extends App {
 
     /**
      * search.imageSearch

@@ -9,10 +9,10 @@
 
 namespace xzncit\wechat\User\Tag;
 
-use xzncit\core\base\BaseWeChat;
+use xzncit\core\App;
 use xzncit\core\http\HttpClient;
 
-class Tag extends BaseWeChat {
+class Tag extends App {
 
     /**
      * 创建标签

@@ -10,10 +10,10 @@
 namespace xzncit\mini\ImmediateDelivery;
 
 
-use xzncit\core\base\BaseMiniProgram;
+use xzncit\core\App;
 use xzncit\core\http\HttpClient;
 
-class ImmediateDelivery extends BaseMiniProgram {
+class ImmediateDelivery extends App {
 
     /**
      * immediateDelivery.abnormalConfirm

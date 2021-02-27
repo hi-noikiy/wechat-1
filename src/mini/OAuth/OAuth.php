@@ -9,10 +9,10 @@
 
 namespace xzncit\mini\OAuth;
 
-use xzncit\core\base\BaseMiniProgram;
+use xzncit\core\App;
 use xzncit\core\http\HttpClient;
 
-class OAuth extends BaseMiniProgram {
+class OAuth extends App {
 
     /**
      * 登录

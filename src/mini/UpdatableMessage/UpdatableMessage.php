@@ -9,10 +9,10 @@
 
 namespace xzncit\mini\UpdatableMessage;
 
-use xzncit\core\base\BaseMiniProgram;
+use xzncit\core\App;
 use xzncit\core\http\HttpClient;
 
-class UpdatableMessage extends BaseMiniProgram {
+class UpdatableMessage extends App {
 
     /**
      * updatableMessage.createActivityId

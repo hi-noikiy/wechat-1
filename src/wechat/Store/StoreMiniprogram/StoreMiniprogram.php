@@ -9,12 +9,10 @@
 
 namespace xzncit\wechat\Store\StoreMiniprogram;
 
-
-use xzncit\base\Http;
-use xzncit\core\base\BaseWeChat;
+use xzncit\core\App;
 use xzncit\core\http\HttpClient;
 
-class StoreMiniprogram extends BaseWeChat {
+class StoreMiniprogram extends App {
 
     public function getCategoryList(){
         return HttpClient::create()->get("wxa/get_merchant_category?access_token=ACCESS_TOKEN")->toArray();

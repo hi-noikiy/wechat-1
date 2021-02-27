@@ -72,11 +72,11 @@ class MiniProgram extends Service{
      */
     public function __construct(array $config){
         if(empty($config["appid"])){
-            throw new ConfigNotFoundException("miniprogram appid cannot be empty!",0);
+            throw new ConfigNotFoundException("Missing Config - appid",0);
         }
 
         if(empty($config["appsecret"])){
-            throw new ConfigNotFoundException("miniprogram appsecret cannot be empty!",0);
+            throw new ConfigNotFoundException("Missing Config - appsecret",0);
         }
 
         parent::__construct($config);

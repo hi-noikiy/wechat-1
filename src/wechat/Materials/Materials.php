@@ -9,10 +9,10 @@
 
 namespace xzncit\wechat\Materials;
 
-use xzncit\core\base\BaseWeChat;
+use xzncit\core\App;
 use xzncit\core\http\HttpClient;
 
-class Materials extends BaseWeChat {
+class Materials extends App {
 
     /**
      * 上传临时素材和永久性素材方法

@@ -9,7 +9,7 @@
 
 namespace xzncit\wechat\Subscription;
 
-use xzncit\core\base\BaseWeChat;
+use xzncit\core\App;
 use xzncit\core\http\HttpClient;
 
 /**
@@ -17,7 +17,7 @@ use xzncit\core\http\HttpClient;
  * Class Subscription
  * @package xzncit\wechat\Subscription
  */
-class Subscription extends BaseWeChat {
+class Subscription extends App {
 
     /**
      * 选用模板

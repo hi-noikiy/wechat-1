@@ -9,10 +9,10 @@
 
 namespace xzncit\wechat\QRCode;
 
-use xzncit\core\base\BaseWeChat;
+use xzncit\core\App;
 use xzncit\core\http\HttpClient;
 
-class QRCode extends BaseWeChat{
+class QRCode extends App {
 
     /**
      * 创建二维码

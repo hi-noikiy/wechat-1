@@ -9,11 +9,10 @@
 
 namespace xzncit\mini\Img;
 
-use http\Url;
-use xzncit\core\base\BaseMiniProgram;
+use xzncit\core\App;
 use xzncit\core\http\HttpClient;
 
-class Img extends BaseMiniProgram {
+class Img extends App {
 
     /**
      * img.aiCrop

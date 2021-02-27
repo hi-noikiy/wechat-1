@@ -9,10 +9,10 @@
 
 namespace xzncit\mini\PluginManager;
 
-use xzncit\core\base\BaseMiniProgram;
+use xzncit\core\App;
 use xzncit\core\http\HttpClient;
 
-class PluginManager extends BaseMiniProgram {
+class PluginManager extends App {
 
     public function applyPlugin($action,$plugin_appid,$reason){
         return HttpClient::create()->postJson("wxa/plugin?access_token=ACCESS_TOKEN",[

@@ -40,7 +40,7 @@ class Prpcrypt {
             $encrypted = openssl_encrypt($text, 'AES-256-CBC', substr($this->key, 0, 32), OPENSSL_ZERO_PADDING, $iv);
             return [0, $encrypted];
         } catch (\Exception $e) {
-            return [40006, null];
+            return [40006, $this->getErrorMessage("40006")];
         }
     }
 
@@ -54,20 +54,20 @@ class Prpcrypt {
             $iv = substr($this->key, 0, 16);
             $decrypted = openssl_decrypt($encrypted, 'AES-256-CBC', substr($this->key, 0, 32), OPENSSL_ZERO_PADDING, $iv);
         } catch (\Exception $e) {
-            return [40007, null];
+            return [40007, $this->getErrorMessage("40007")];
         }
 
         try {
             $result = $this->decode($decrypted);
             if (strlen($result) < 16) {
-                return [40007, null];
+                return [40007, $this->getErrorMessage("40007")];
             }
             $content = substr($result, 16, strlen($result));
             $len_list = unpack("N", substr($content, 0, 4));
             $xml_len = $len_list[1];
             return [0, substr($content, 4, $xml_len), substr($content, $xml_len + 4)];
         } catch (\Exception $e) {
-            return [40008, null];
+            return [40008, $this->getErrorMessage("40008")];
         }
     }
 

@@ -9,10 +9,10 @@
 
 namespace xzncit\mini\QRCode;
 
-use xzncit\core\base\BaseMiniProgram;
+use xzncit\core\App;
 use xzncit\core\http\HttpClient;
 
-class QRCode extends BaseMiniProgram {
+class QRCode extends App {
 
     /**
      * wxacode.createQRCode

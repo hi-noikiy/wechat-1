@@ -9,10 +9,10 @@
 
 namespace xzncit\wechat\Statistics;
 
-use xzncit\core\base\BaseWeChat;
+use xzncit\core\App;
 use xzncit\core\http\HttpClient;
 
-class Statistics extends BaseWeChat {
+class Statistics extends App {
 
     /**
      * 获取用户增减数据

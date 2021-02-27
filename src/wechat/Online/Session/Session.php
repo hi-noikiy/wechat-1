@@ -9,7 +9,7 @@
 
 namespace xzncit\wechat\Online\Session;
 
-use xzncit\core\base\BaseWeChat;
+use xzncit\core\App;
 use xzncit\core\http\HttpClient;
 
 /**
@@ -17,7 +17,7 @@ use xzncit\core\http\HttpClient;
  * Class Session
  * @package xzncit\wechat\Online\Session
  */
-class Session extends BaseWeChat {
+class Session extends App {
 
     /**
      * 创建会话

@@ -9,11 +9,10 @@
 
 namespace xzncit\mini\SubscribeMessage;
 
-
-use xzncit\core\base\BaseMiniProgram;
+use xzncit\core\App;
 use xzncit\core\http\HttpClient;
 
-class SubscribeMessage extends BaseMiniProgram {
+class SubscribeMessage extends App {
 
     /**
      * subscribeMessage.addTemplate

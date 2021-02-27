@@ -53,7 +53,7 @@ class Response {
     public static function json2obj($json){
         $result = json_decode($json);
         if (empty($result)) {
-            throw new \Exception('invalid response.', '0');
+            throw new \Exception('invalid response.', 0);
         }
 
         if(!empty($result->errcode)){

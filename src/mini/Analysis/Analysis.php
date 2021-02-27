@@ -9,10 +9,10 @@
 
 namespace xzncit\mini\Analysis;
 
-use xzncit\core\base\BaseMiniProgram;
+use xzncit\core\App;
 use xzncit\core\http\HttpClient;
 
-class Analysis extends BaseMiniProgram {
+class Analysis extends App {
 
     /**
      * analysis.getDailyRetain

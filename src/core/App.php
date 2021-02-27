@@ -7,11 +7,11 @@
 // | Author: xzncit <158373108@qq.com>
 // +----------------------------------------------------------------------
 
-namespace xzncit\core\base;
+namespace xzncit\core;
 
 use xzncit\core\Service;
 
-class BaseWeChat {
+class App {
 
     protected $app;
 

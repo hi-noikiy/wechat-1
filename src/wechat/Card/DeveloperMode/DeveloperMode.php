@@ -9,10 +9,10 @@
 
 namespace xzncit\wechat\Card\DeveloperMode;
 
-use xzncit\core\base\BaseWeChat;
+use xzncit\core\App;
 use xzncit\core\http\HttpClient;
 
-class DeveloperMode extends BaseWeChat {
+class DeveloperMode extends App {
 
     /**
      * 创建子商户卡券接口

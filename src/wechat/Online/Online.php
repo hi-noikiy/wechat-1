@@ -9,7 +9,7 @@
 
 namespace xzncit\wechat\Online;
 
-use xzncit\core\base\BaseWeChat;
+use xzncit\core\App;
 use xzncit\core\http\HttpClient;
 
 /**
@@ -17,7 +17,7 @@ use xzncit\core\http\HttpClient;
  * Class Online
  * @package xzncit\wechat\Online
  */
-class Online extends BaseWeChat {
+class Online extends App {
 
     /**
      * 添加客服帐号

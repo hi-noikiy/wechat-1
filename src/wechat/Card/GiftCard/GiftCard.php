@@ -9,11 +9,10 @@
 
 namespace xzncit\wechat\Card\GiftCard;
 
-use xzncit\base\Http;
-use xzncit\core\base\BaseWeChat;
+use xzncit\core\App;
 use xzncit\core\http\HttpClient;
 
-class GiftCard extends BaseWeChat {
+class GiftCard extends App {
 
     /**
      * 创建礼品卡接口

@@ -78,15 +78,15 @@ class Wechat extends Service {
      */
     public function __construct(array $config){
         if(empty($config["appid"])){
-            throw new ConfigNotFoundException("wechat appid cannot be empty!",0);
+            throw new ConfigNotFoundException("Missing Config - appid",0);
         }
 
         if(empty($config["appsecret"])){
-            throw new ConfigNotFoundException("wechat appsecret cannot be empty!",0);
+            throw new ConfigNotFoundException("Missing Config - appsecret",0);
         }
 
         if(empty($config["token"])){
-            throw new ConfigNotFoundException("wechat token cannot be empty!",0);
+            throw new ConfigNotFoundException("Missing Config - token",0);
         }
 
         parent::__construct($config);

@@ -9,10 +9,10 @@
 
 namespace xzncit\mini\NearbyPoi;
 
-use xzncit\core\base\BaseMiniProgram;
+use xzncit\core\App;
 use xzncit\core\http\HttpClient;
 
-class NearbyPoi extends BaseMiniProgram {
+class NearbyPoi extends App {
 
     /**
      * nearbyPoi.add

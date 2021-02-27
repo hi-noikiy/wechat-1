@@ -9,7 +9,7 @@
 
 namespace xzncit\wechat\Server;
 
-use xzncit\core\base\BaseWeChat;
+use xzncit\core\App;
 use xzncit\core\base\Prpcrypt;
 use xzncit\core\exception\ConfigNotFoundException;
 use xzncit\core\http\Request;
@@ -17,7 +17,7 @@ use xzncit\core\http\Response;
 use xzncit\core\message\Raw;
 use xzncit\core\Service;
 
-class Server extends BaseWeChat {
+class Server extends App {
 
     protected $receive;
 

@@ -9,10 +9,10 @@
 
 namespace xzncit\wechat\Card\CouponsMiniProgram;
 
-use xzncit\core\base\BaseWeChat;
+use xzncit\core\App;
 use xzncit\core\http\HttpClient;
 
-class CouponsMiniProgram extends BaseWeChat {
+class CouponsMiniProgram extends App {
 
     /**
      * 取开卡插件参数

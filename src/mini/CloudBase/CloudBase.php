@@ -9,10 +9,10 @@
 
 namespace xzncit\mini\CloudBase;
 
-use xzncit\core\base\BaseMiniProgram;
+use xzncit\core\App;
 use xzncit\core\http\HttpClient;
 
-class CloudBase extends BaseMiniProgram {
+class CloudBase extends App {
 
     /**
      * cloudbase.getOpenData

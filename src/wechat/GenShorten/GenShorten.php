@@ -9,10 +9,10 @@
 
 namespace xzncit\wechat\GenShorten;
 
-use xzncit\core\base\BaseWeChat;
+use xzncit\core\App;
 use xzncit\core\http\HttpClient;
 
-class GenShorten extends BaseWeChat {
+class GenShorten extends App {
 
     /**
      * 短key托管类似于短链API，开发者可以通过GenShorten将不超过4KB的长信息转成短key，再通过FetchShorten将短key还原为长信息。

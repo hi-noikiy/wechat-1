@@ -9,11 +9,10 @@
 
 namespace xzncit\mini\Soter;
 
-
-use xzncit\core\base\BaseMiniProgram;
+use xzncit\core\App;
 use xzncit\core\http\HttpClient;
 
-class Soter extends BaseMiniProgram {
+class Soter extends App {
 
     /**
      * soter.verifySignature

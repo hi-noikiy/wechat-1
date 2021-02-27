@@ -9,7 +9,7 @@
 
 namespace xzncit\wechat\Base;
 
-use xzncit\core\base\BaseWeChat;
+use xzncit\core\App;
 use xzncit\core\http\HttpClient;
 
 /**
@@ -17,7 +17,7 @@ use xzncit\core\http\HttpClient;
  * Class Base
  * @package xzncit\wechat\Base
  */
-class Base extends BaseWeChat {
+class Base extends App {
 
     /**
      * 获取微信服务器IP地址

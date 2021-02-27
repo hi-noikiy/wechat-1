@@ -69,16 +69,13 @@ class Config {
     /**
      * @param string|array $name
      * @param null         $value
-     * @return bool
      */
     public static function set($name, $value=null){
-        if(is_string($name)){
-            self::$config[$name] = $value;
-        }else if(is_array($name)){
+        if(is_array($name)){
             self::$config = array_merge(self::$config,$name);
+        }else{
+            self::$config[$name] = $value;
         }
-
-        return false;
     }
 
     public static function isEmpty($name,$default=""){
@@ -132,4 +129,5 @@ class Config {
 
         self::$config["cache"]["path"] = $cachePath;
     }
+
 }

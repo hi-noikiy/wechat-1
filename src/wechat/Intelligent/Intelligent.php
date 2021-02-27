@@ -9,10 +9,10 @@
 
 namespace xzncit\wechat\Intelligent;
 
-use xzncit\core\base\BaseWeChat;
+use xzncit\core\App;
 use xzncit\core\http\HttpClient;
 
-class Intelligent extends BaseWeChat {
+class Intelligent extends App {
 
     /**
      * 发送语义理解请求

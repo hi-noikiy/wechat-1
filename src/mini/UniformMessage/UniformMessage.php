@@ -9,10 +9,10 @@
 
 namespace xzncit\mini\UniformMessage;
 
-use xzncit\core\base\BaseMiniProgram;
+use xzncit\core\App;
 use xzncit\core\http\HttpClient;
 
-class UniformMessage extends BaseMiniProgram {
+class UniformMessage extends App {
 
     /**
      * uniformMessage.send

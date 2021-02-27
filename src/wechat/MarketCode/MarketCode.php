@@ -9,10 +9,10 @@
 
 namespace xzncit\wechat\MarketCode;
 
-use xzncit\core\base\BaseWeChat;
+use xzncit\core\App;
 use xzncit\core\http\HttpClient;
 
-class MarketCode extends BaseWeChat {
+class MarketCode extends App {
 
     /**
      * 申请二维码接口

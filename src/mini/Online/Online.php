@@ -9,10 +9,10 @@
 
 namespace xzncit\mini\Online;
 
-use xzncit\core\base\BaseMiniProgram;
+use xzncit\core\App;
 use xzncit\core\http\HttpClient;
 
-class Online extends BaseMiniProgram {
+class Online extends App {
 
     /**
      * customerServiceMessage.getTempMedia

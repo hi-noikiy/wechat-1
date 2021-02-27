@@ -9,11 +9,11 @@
 
 namespace xzncit\wechat\Script;
 
-use xzncit\core\base\BaseWeChat;
+use xzncit\core\App;
 use xzncit\core\http\HttpClient;
 use xzncit\core\Cache;
 
-class Script extends BaseWeChat {
+class Script extends App {
 
     /**
      * 删除JSAPI授权TICKET

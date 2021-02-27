@@ -9,11 +9,10 @@
 
 namespace xzncit\wechat\Card\Member;
 
-
-use xzncit\core\base\BaseWeChat;
+use xzncit\core\App;
 use xzncit\core\http\HttpClient;
 
-class Member extends BaseWeChat {
+class Member extends App {
 
     /**
      * 创建会员卡接口

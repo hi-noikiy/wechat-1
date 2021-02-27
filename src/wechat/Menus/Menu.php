@@ -9,7 +9,7 @@
 
 namespace xzncit\wechat\Menus;
 
-use xzncit\core\base\BaseWeChat;
+use xzncit\core\App;
 use xzncit\core\http\HttpClient;
 
 /**
@@ -17,7 +17,7 @@ use xzncit\core\http\HttpClient;
  * Class Menu
  * @package xzncit\wechat\Menus
  */
-class Menu extends BaseWeChat {
+class Menu extends App {
 
     /**
      * 创建自定义菜单

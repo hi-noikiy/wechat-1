@@ -9,10 +9,10 @@
 
 namespace xzncit\wechat\Store;
 
-use xzncit\core\base\BaseWeChat;
+use xzncit\core\App;
 use xzncit\core\http\HttpClient;
 
-class Store extends BaseWeChat {
+class Store extends App {
 
     /**
      * 创建门店

@@ -9,10 +9,10 @@
 
 namespace xzncit\mini\Operation;
 
-use xzncit\core\base\BaseMiniProgram;
+use xzncit\core\App;
 use xzncit\core\http\HttpClient;
 
-class Operation extends BaseMiniProgram {
+class Operation extends App {
 
     /**
      * operation.getFeedback

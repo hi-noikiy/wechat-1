@@ -9,10 +9,10 @@
 
 namespace xzncit\wechat\Card\SpecialTicket;
 
-use xzncit\core\base\BaseWeChat;
+use xzncit\core\App;
 use xzncit\core\http\HttpClient;
 
-class SpecialTicket extends BaseWeChat {
+class SpecialTicket extends App {
 
     /**
      * 创建门票,可用于创建会议/演出门票/景区门票/电影票/飞机票

@@ -9,10 +9,10 @@
 
 namespace xzncit\wechat\User;
 
-use xzncit\core\base\BaseWeChat;
+use xzncit\core\App;
 use xzncit\core\http\HttpClient;
 
-class User extends BaseWeChat{
+class User extends App {
 
     /**
      * 公众号可通过本接口来获取帐号的关注者列表，关注者列表由一串OpenID（加密后的微信号，每个用户对每个公众号的OpenID是唯一的）组成。

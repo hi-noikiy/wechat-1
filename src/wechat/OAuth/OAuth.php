@@ -9,10 +9,10 @@
 
 namespace xzncit\wechat\OAuth;
 
-use xzncit\core\base\BaseWeChat;
+use xzncit\core\App;
 use xzncit\core\http\HttpClient;
 
-class OAuth extends BaseWeChat {
+class OAuth extends App {
 
     /**
      * Oauth 授权跳转接口

@@ -17,7 +17,6 @@ class HttpClient {
 
     private static $instance;
     private $client;
-    private $isVerify = false;
 
     public $options;
     public $response = "";
@@ -42,12 +41,31 @@ class HttpClient {
      * @return $this
      */
     public function get($uri,array $params=[]){
-        $data = $this->parseUrl($uri);
-        $this->response = $this->client->request('GET',$data["path"],[
-            'verify'=>$this->isVerify,
-            'query'=>$this->params(array_merge($data["query"],$params))
+        $array = $this->parseUrl($uri);
+        $this->response = $this->client->request('GET',$array["path"],[
+            'verify'=>false,
+            'query'=>$this->params(array_merge($array["query"],$params))
         ]);
 
+        return $this;
+    }
+
+    /**
+     * POST提交数据方法
+     * @param string $uri
+     * @param mixed $data
+     * @param array $params
+     * @return $this
+     */
+    public function post($uri,$data,array $params=[]){
+        $array = $this->parseUrl($uri);
+        $options = array_merge([
+            'verify'=>false,
+            'query'=>$this->params($array["query"]),
+            'body'=>$data
+        ],$params);
+
+        $this->response = $this->client->request('POST',$array["path"],$options);
         return $this;
     }
 
@@ -55,14 +73,13 @@ class HttpClient {
      * POST表单提交数据方法
      * @param string $uri
      * @param array $params
-     * @param bool $verify
      * @return $this
      */
     public function formPost($uri,array $params=[]){
-        $data = $this->parseUrl($uri);
-        $this->response = $this->client->request('POST',$data["path"],[
-            'verify'=>$this->isVerify,
-            'query'=>$this->params($data["query"]),
+        $array = $this->parseUrl($uri);
+        $this->response = $this->client->request('POST',$array["path"],[
+            'verify'=>false,
+            'query'=>$this->params($array["query"]),
             'form_params'=>$params
         ]);
 
@@ -73,17 +90,16 @@ class HttpClient {
      * POST提交JSON数据方法
      * @param string $uri
      * @param array $params
-     * @param bool $verify
      * @return $this
      */
     public function postJson($uri,array $params=[]){
-        $data = $this->parseUrl($uri);
-        $this->response = $this->client->request('POST',$data["path"],[
+        $array = $this->parseUrl($uri);
+        $this->response = $this->client->request('POST',$array["path"],[
             'headers'=>[
                 'Content-Type' => 'application/json'
             ],
-            'verify'=>$this->isVerify,
-            'query'=>$this->params($data["query"]),
+            'verify'=>false,
+            'query'=>$this->params($array["query"]),
             'body'=>json_encode($params,JSON_UNESCAPED_UNICODE)
         ]);
 
@@ -108,14 +124,13 @@ class HttpClient {
      * ]
      * @param string $uri
      * @param array $params
-     * @param bool $verify
      * @return $this
      */
     public function upload($uri,array $params=[]){
-        $data = $this->parseUrl($uri);
-        $this->response = $this->client->request('POST', $data["path"], [
-            'verify'=>$this->isVerify,
-            'query'=>$this->params($data["query"]),
+        $array = $this->parseUrl($uri);
+        $this->response = $this->client->request('POST', $array["path"], [
+            'verify'=>false,
+            'query'=>$this->params($array["query"]),
             'multipart'=>$params,
             'connect_timeout' => 35,
             'timeout' => 35,
@@ -132,10 +147,10 @@ class HttpClient {
      * @throws \Exception
      */
     public function uploadBody($uri,array $body){
-        $data = $this->parseUrl($uri);
-        $this->response = $this->client->request('POST', $data["path"], [
-            'verify'=>$this->isVerify,
-            'query'=>$this->params($data["query"]),
+        $array = $this->parseUrl($uri);
+        $this->response = $this->client->request('POST', $array["path"], [
+            'verify'=>false,
+            'query'=>$this->params($array["query"]),
             'body'=>$body,
             'connect_timeout' => 35,
             'timeout' => 35,
@@ -188,15 +203,6 @@ class HttpClient {
 
         $data["query"] = $array;
         return $data;
-    }
-
-    /**
-     * 请求时验证SSL证书
-     * @return $this
-     */
-    public function verify(){
-        $this->isVerify = true;
-        return $this;
     }
 
     /**
